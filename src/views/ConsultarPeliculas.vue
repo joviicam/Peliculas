@@ -5,7 +5,12 @@
             <p>Suelta el formulario aqui para crear una nueva película</p>
         </div>
         <div class="row">
-            <div class="col-md-4" v-for="pelicula in peliculas" :key="pelicula.idMovie">
+            <div v-show="peliculas === null" class="text-center">
+                <h4>No hay películas registradas </h4>
+                <img src="../assets/nohay.jpg"
+                 alt="Hogar" class="img-fluid" style="width: 40%; height: 70%; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+            </div>
+            <div class="col-md-6" v-for="pelicula in peliculas" :key="pelicula.idMovie">
                 <div class="card pelicula-card">
                     <img :src="'https://picsum.photos/200/300?random=' + pelicula.idMovie" class="card-img-top">
                     <div class="card-body">
